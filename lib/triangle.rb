@@ -23,8 +23,11 @@ private
     raise TriangleError
   elsif a < 0 || b < 0 || c < 0
     raise TriangleError
+  elsif a + b < c || b + c < a || c + a < a
+    raise TriangleError
     end
   end
+
 end
 
 
