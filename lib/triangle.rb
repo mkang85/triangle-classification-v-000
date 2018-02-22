@@ -7,6 +7,7 @@ class Triangle
   end
 
   def kind
+    valid_triangle
     if a == b && b == c
       :equilateral
     elsif a == b || a == c || c == b
@@ -15,5 +16,15 @@ class Triangle
       :scalene
   end
 end
+private
 
+  def valid_triangle
+    if a == 0 && b == 0 && c == 0
+    raise TriangleError
+    end
+  end
+end
+
+
+class TriangleError < StandardError
 end
